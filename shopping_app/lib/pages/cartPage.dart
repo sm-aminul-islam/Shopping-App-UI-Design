@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/widgets/cartAppbar.dart';
+import 'package:shopping_app/widgets/cartBottomNavBar.dart';
 import 'package:shopping_app/widgets/cartItemSamples.dart';
 
 class CartPage extends StatelessWidget {
@@ -12,7 +13,6 @@ class CartPage extends StatelessWidget {
         children: [
           CartAppbar(),
           Container(
-            height: 700,
             padding: EdgeInsets.only(top: 15),
             decoration: BoxDecoration(
               color: Color(0xFFEDECF2),
@@ -21,12 +21,46 @@ class CartPage extends StatelessWidget {
                 topRight: Radius.circular(35),
               ),
             ),
-            child: Column(children: [
-              CartItemSamples(),
-            ]),
-          )
+            child: Column(
+              children: [
+                CartItemSamples(),
+                Container(
+                  // decoration: BoxDecoration(
+                  //   borderRadius: BorderRadius.circular(10),
+                  // ),
+                  margin: EdgeInsets.symmetric(vertical: 20, horizontal: 15),
+                  padding: EdgeInsets.all(10),
+                  child: Row(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Color(0xFF4C53A5),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Icon(
+                          Icons.add,
+                          color: Colors.white,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 10),
+                        child: Text(
+                          "Add Coupon Code",
+                          style: TextStyle(
+                              color: Color(0xFF4C53A5),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
+      bottomNavigationBar: CartBottomNavBar(),
     );
   }
 }

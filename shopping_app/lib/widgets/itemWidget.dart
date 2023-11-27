@@ -6,7 +6,7 @@ class ItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.count(
-      childAspectRatio: 0.68,
+      childAspectRatio: 0.64,
       crossAxisCount: 2,
       shrinkWrap: true,
       physics: NeverScrollableScrollPhysics(),
@@ -45,7 +45,9 @@ class ItemWidget extends StatelessWidget {
                   ],
                 ),
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamed(context, "itemPage");
+                  },
                   child: Container(
                     margin: EdgeInsets.all(10),
                     child: Image.asset(
